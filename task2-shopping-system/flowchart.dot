@@ -1,0 +1,58 @@
+digraph ShoppingSystem {
+    rankdir=TB;
+    node [shape=rectangle, fontname="Arial"];
+
+    Start [shape=oval, label="Start"];
+    Login [label="User Login Check"];
+    LoginCheck {shape=diamond, label="Login Successful?"};
+    
+    Menu [label="Main Menu\n(Browse, View Cart, Checkout)"];
+    
+    CategoryLoop [label="Browse Categories & Products"];
+    StockCheck {shape=diamond, label="In Stock?"};
+    AddToCart [label="Add Product to Cart"];
+    
+    ViewCart [label="View & Edit Cart"];
+    
+    Checkout [label="Checkout Process"];
+    MinAmount {shape=diamond, label="Total >= $10?"};
+    Discount {shape=diamond, label="Have Discount Code?"};
+    ApplyDiscount [label="Apply Discount"];
+    
+    Shipping {shape=diamond, label="Total > $40?"};
+    FreeShipping [label="Shipping: $0"];
+    PaidShipping [label="Shipping: $5"];
+    
+    Payment [label="Payment Method Selection"];
+    Confirm [shape=oval, label="Order Confirmation & End"];
+
+    Start -> Login;
+    Login -> LoginCheck;
+    LoginCheck -> Menu [label="YES"];
+    LoginCheck -> Start [label="NO"];
+    
+    Menu -> CategoryLoop;
+    CategoryLoop -> StockCheck;
+    StockCheck -> AddToCart [label="YES"];
+    StockCheck -> CategoryLoop [label="NO"];
+    AddToCart -> Menu;
+    
+    Menu -> ViewCart;
+    ViewCart -> Menu;
+    
+    Menu -> Checkout;
+    Checkout -> MinAmount;
+    MinAmount -> Discount [label="YES"];
+    MinAmount -> Menu [label="NO"];
+    
+    Discount -> ApplyDiscount [label="YES"];
+    Discount -> Shipping [label="NO"];
+    ApplyDiscount -> Shipping;
+    
+    Shipping -> FreeShipping [label="YES"];
+    Shipping -> PaidShipping [label="NO"];
+    
+    FreeShipping -> Payment;
+    PaidShipping -> Payment;
+    Payment -> Confirm;
+}
