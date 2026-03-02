@@ -1,0 +1,37 @@
+Mermaid code
+graph TD
+    %% Node Definitions
+    Start([Start])
+    InputPIN[Enter PIN]
+    CheckPIN{PIN Valid?}
+    Menu[Show Menu:<br/>1. Balance<br/>2. Deposit<br/>3. Withdraw<br/>4. Exit]
+    Choice{User Choice}
+    
+    ShowBalance[Display Balance]
+    Deposit[Update Balance: Add Amount]
+    Withdraw{Funds Available?}
+    UpdateBalance[Update Balance: Deduct Amount]
+    Error[Show Error: Insufficient Funds]
+    Exit([Logout & End])
+
+    %% Flow Connections
+    Start --> InputPIN
+    InputPIN --> CheckPIN
+    CheckPIN -- No --> Exit
+    CheckPIN -- Yes --> Menu
+    
+    Menu --> Choice
+    
+    Choice -- 1 --> ShowBalance
+    Choice -- 2 --> Deposit
+    Choice -- 3 --> Withdraw
+    Choice -- 4 --> Exit
+
+    ShowBalance --> Menu
+    Deposit --> Menu
+    
+    Withdraw -- Yes --> UpdateBalance
+    Withdraw -- No --> Error
+    
+    UpdateBalance --> Menu
+    Error --> Menu
