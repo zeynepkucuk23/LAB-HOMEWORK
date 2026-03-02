@@ -1,0 +1,25 @@
+CONVERSATION LOG: ATM SYSTEM DESIGN
+Date: March 2026
+Model: Gemini 
+
+--- USER ---
+"flowchart.dot — Write the Graphviz DOT code."
+
+--- AI ---
+(Paste the first DOT code and description I provided here.)
+
+--- USER ---
+"How do I upload these visual flowcharts to GitHub?"
+
+--- AI ---
+
+(Paste the installation instructions here)
+
+--- USER ---
+
+"flowchart.mmd — Mermaid code, let's do this"
+
+--- AI ---
+
+(Paste the Mermaid code here)
+... (and continue like this)
