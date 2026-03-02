@@ -1,0 +1,35 @@
+Graphviz DOT code
+digraph ATM_System {
+    node [shape=rectangle, fontname="Arial"];
+
+    Start [shape=oval, label="Start"];
+    InputPIN [label="Enter PIN"];
+    CheckPIN [shape=diamond, label="PIN Correct?"];
+    Menu [label="Show Menu\n(Balance, Deposit, Withdraw, Exit)"];
+    Choice [shape=diamond, label="User Choice"];
+    
+    Balance [label="Show Balance"];
+    Deposit [label="Add Amount to Balance"];
+    Withdraw [shape=diamond, label="Amount <= Balance?"];
+    UpdateBalance [label="Subtract Amount"];
+    Error [label="Insufficient Funds"];
+    Exit [shape=oval, label="End / Logout"];
+
+    Start -> InputPIN;
+    InputPIN -> CheckPIN;
+    CheckPIN -> Menu [label="Yes"];
+    CheckPIN -> Exit [label="No (Invalid)"];
+    
+    Menu -> Choice;
+    Choice -> Balance [label="1"];
+    Choice -> Deposit [label="2"];
+    Choice -> Withdraw [label="3"];
+    Choice -> Exit [label="4"];
+
+    Balance -> Menu;
+    Deposit -> Menu;
+    Withdraw -> UpdateBalance [label="Yes"];
+    Withdraw -> Error [label="No"];
+    UpdateBalance -> Menu;
+    Error -> Menu;
+}
