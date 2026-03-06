@@ -1,0 +1,24 @@
+digraph CourseRegistration {
+    node [shape=rectangle, style=filled, color=lightcyan, fontname="Arial"];
+    
+    Start [shape=oval, label="Start", color=lightgreen];
+    Login [label="Student Login"];
+    AuthCheck [shape=diamond, label="Authenticated?"];
+    ShowCourses [label="Display Available Courses"];
+    SelectCourse [label="User Selects Course"];
+    QuotaCheck [shape=diamond, label="Quota Available?"];
+    Success [label="Register & Show Success"];
+    FullError [label="Show 'Course Full' Error"];
+    End [shape=oval, label="End", color=tomato];
+
+    Start -> Login;
+    Login -> AuthCheck;
+    AuthCheck -> ShowCourses [label="Yes"];
+    AuthCheck -> Login [label="No (Retry)"];
+    ShowCourses -> SelectCourse;
+    SelectCourse -> QuotaCheck;
+    QuotaCheck -> Success [label="Yes"];
+    QuotaCheck -> FullError [label="No"];
+    Success -> End;
+    FullError -> ShowCourses;
+}
