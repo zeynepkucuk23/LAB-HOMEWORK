@@ -1,0 +1,10 @@
+graph TD
+    Start([Start]) --> Input[Input Item, Price, Qty]
+    Input --> Calc[Update Total Cart]
+    Calc --> More{Add more items?}
+    More -- Yes --> Input
+    More -- No --> Discount{Total > 1000?}
+    Discount -- Yes --> Apply[Apply 10% Discount]
+    Discount -- No --> EndDisp[Display Total]
+    Apply --> EndDisp
+    EndDisp --> Finish([End])
