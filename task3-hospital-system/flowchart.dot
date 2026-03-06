@@ -1,0 +1,21 @@
+digraph HospitalSystem {
+    node [shape=rectangle, style=filled, color=lightyellow, fontname="Arial"];
+    
+    Start [shape=oval, label="Start", color=lightgreen];
+    Login [label="Patient Login / Registration"];
+    SelectDept [label="Select Medical Department"];
+    CheckDoc [shape=diamond, label="Doctor Available?"];
+    SelectSlot [label="Select Appointment Slot"];
+    Error [label="Show Availability Error"];
+    Confirm [label="Confirm Appointment"];
+    End [shape=oval, label="End", color=tomato];
+
+    Start -> Login;
+    Login -> SelectDept;
+    SelectDept -> CheckDoc;
+    CheckDoc -> SelectSlot [label="Yes"];
+    CheckDoc -> Error [label="No"];
+    SelectSlot -> Confirm;
+    Error -> SelectDept;
+    Confirm -> End;
+}
