@@ -1,15 +1,20 @@
+```text
 BEGIN
-  Total_Cart = 0
+  SET Total_Cart = 0
+  
   WHILE (Customer wants to add more items)
     INPUT "Enter Item Name:" Item_Name
     INPUT "Enter Item Price:" Item_Price
     INPUT "Enter Quantity:" Quantity
-    Subtotal = Item_Price * Quantity
-    Total_Cart = Total_Cart + Subtotal
+    
+    SET Subtotal = Item_Price * Quantity
+    SET Total_Cart = Total_Cart + Subtotal
     OUTPUT Item_Name + " added to cart."
   END WHILE
+  
   IF Total_Cart > 1000 THEN
-    Total_Cart = Total_Cart * 0.9  // 10% discount
+    SET Total_Cart = Total_Cart * 0.9  // 10% discount
   END IF
- OUTPUT "Final Total: " + Total_Cart
+  
+  OUTPUT "Final Total: " + Total_Cart
 END
