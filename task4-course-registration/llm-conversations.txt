@@ -1,0 +1,9 @@
+CONVERSATION LOG: COURSE REGISTRATION SYSTEM
+Model: Gemini 3 Flash
+
+- USER: Requested an algorithm for academic course registration with quota limits.
+- AI: Created a pseudocode focusing on student authentication and "Quota > 0" validation.
+- USER: Asked for the final visualization codes for this lab assignment.
+- AI: Provided the DOT and MMD codes. Explained how to handle the "Course Full" error state.
+- USER: Discussed the overall repository structure and naming conventions (flowchart dot.png vs flowchart mermaid.png).
+- AI: Assisted in finalizing the documentation to meet the instructor's specific naming requirements.
