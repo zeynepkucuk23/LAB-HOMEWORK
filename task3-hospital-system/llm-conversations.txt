@@ -1,0 +1,9 @@
+CONVERSATION LOG: HOSPITAL APPOINTMENT SYSTEM
+Model: Gemini 3 Flash
+
+- USER: Requested a system to manage patient appointments and doctor availability.
+- AI: Developed logic for department selection (Cardiology, Pediatrics, etc.) and a conditional check for "Doctor Available?".
+- USER: Asked for professional visualization of the appointment booking flow.
+- AI: Generated Graphviz (DOT) code with color-coded nodes and Mermaid (MMD) code for a clean top-down view.
+- USER: Verified the "No available doctors" error path in the flowchart.
+- AI: Confirmed the loop back to department selection if a doctor is unavailable.
