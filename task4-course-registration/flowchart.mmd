@@ -1,0 +1,11 @@
+graph TD
+    A([Start]) --> B[Student Login]
+    B --> C{Authenticated?}
+    C -- Yes --> D[Browse Courses]
+    C -- No --> B
+    D --> E[Select Course Code]
+    E --> F{Is Quota > 0?}
+    F -- Yes --> G[Enrollment Success]
+    F -- No --> H[Error: Course Full]
+    G --> I([End])
+    H --> D
