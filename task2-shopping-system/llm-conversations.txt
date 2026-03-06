@@ -1,0 +1,9 @@
+CONVERSATION LOG: ONLINE SHOPPING CART
+Model: Gemini 3 Flash
+
+- USER: Requested an algorithm for a retail shopping experience with a discount feature.
+- AI: Designed a pseudocode using a WHILE loop for adding items and an IF statement for a 10% discount on totals over 1000 TL.
+- USER: Requested flowcharts to represent the loop and discount logic.
+- AI: Provided Graphviz and Mermaid codes. Explained the transition from "Add more items?" back to the "Product List" display.
+- USER: Discussed file organization and README structure for this task.
+- AI: Guided the user on how to document features like Input Validation and Total Calculation.
