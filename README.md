@@ -1,28 +1,29 @@
-# Task 1: ATM System Design
+# Task 2: Shopping System
 
-## System Description
-This project simulates the logic of a standard Automatic Teller Machine (ATM). The system follows a structured flow to ensure secure and accurate banking transactions.
+## Overview
+This project is a logic simulation of a retail shopping experience. It allows users to browse products, add them to a virtual cart, and see a final receipt upon checkout. The goal is to demonstrate basic algorithmic concepts like loops, conditional branching, and simple arithmetic calculations.
 
-### Key Features:
-- **PIN Verification:** Users must enter a valid PIN to access the system.
-- **Main Menu:** Offers four primary options:
-  1. **Check Balance:** Displays the current account balance.
-  2. **Deposit:** Allows users to add funds to their account.
-  3. **Withdraw:** Enables cash withdrawal after checking for sufficient funds.
-  4. **Exit:** Safely logs out the user and terminates the session.
-- **Error Handling:** Provides feedback for invalid PINs or insufficient balance during withdrawal.
+## Features
+- **Product Display:** Shows a list of available items and prices.
+- **Cart Management:** Users can add multiple items to their cart.
+- **Input Validation:** Checks if the requested product is in the store's inventory.
+- **Total Calculation:** Automatically sums up the prices of all items in the cart.
 
-## Design Tools
-- **Graphviz (DOT):** Used for creating a professional, structured architectural flowchart.
-- **Mermaid:** Used for a developer-friendly, markdown-compatible flow diagram.
-- **Pseudocode:** Written in plain English to describe the logic step-by-step before visualization.
+## File Structure
+- `pseudocode.md`: A step-by-step logic description in plain English.
+- `flowchart.dot`: The Graphviz source code for the visual algorithm.
+- `flowchart dot.png`: The visual flowchart generated from Graphviz.
+- `flowchart.mmd`: The Mermaid source code for the visual algorithm.
+- `flowchart mermaid.png`: The visual flowchart generated from Mermaid.
+- `README.md`: Project documentation (this file).
 
-## Personal Notes
-- During this task, I focused on creating a loop-based logic where the user returns to the main menu after each transaction until they choose to exit.
-- Ensuring the "Insufficient Funds" check was a critical logic step in the withdrawal process.
-- Using both DOT and Mermaid helped me understand the differences between static graph generation and live markdown-based rendering.
+## How It Works
+1. The system starts and displays a list of products.
+2. The user is prompted to type a product name or 'exit'.
+3. If a product is chosen, the system validates its existence and adds it to the cart.
+4. If 'exit' is chosen, the system calculates the final total and prints a receipt.
+5. The process ends with a "Thank you" message.
 
-## How to View Diagrams
-1. Open `flowchart dot.png` to see the Graphviz output.
-2. Open `flowchart mermaid.png` to see the Mermaid Live output.
-3. Raw codes are available in `flowchart.dot` and `flowchart.mmd`.
+## Tools Used
+- [Graphviz Online](https://dreampuf.github.io/GraphvizOnline/) for DOT flowcharts.
+- [Mermaid Live Editor](https://mermaid.live/) for Mermaid flowcharts.
