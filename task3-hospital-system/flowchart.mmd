@@ -1,0 +1,9 @@
+graph TD
+    A([Start]) --> B[Patient Login]
+    B --> C[Select Department]
+    C --> D{Doctor Available?}
+    D -- Yes --> E[Pick Time Slot]
+    E --> F[Confirm Appointment]
+    F --> G([End])
+    D -- No --> H[Show Error Message]
+    H --> C
