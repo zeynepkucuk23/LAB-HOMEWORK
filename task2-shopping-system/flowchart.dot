@@ -1,38 +1,27 @@
-digraph HospitalSystem {
-    rankdir=TB;
-    node [shape=rectangle, fontname="Arial", style=rounded];
-
+digraph ShoppingSystem {
+    node [shape=rectangle, style=filled, color=lightblue];
+    
     Start [shape=oval, label="Start"];
-    Auth [label="Patient Authentication"];
-    IsRegistered [shape=diamond, label="Registered?"];
-    Register [label="New Patient Registration"];
-    
-    Menu [label="Main Menu\n(Schedule, Records, Exit)"];
-    
-    Schedule [label="Select Department"];
-    DocCheck [shape=diamond, label="Doctor Available?"];
-    Book [label="Select Slot & Book"];
-    NoDoc [label="Show Availability Error"];
-    
-    Records [label="Display Medical History"];
-    Exit [shape=oval, label="Logout & End"];
+    ShowProducts [label="Display Product List"];
+    InputProduct [label="User Selects Product or 'Exit'"];
+    CheckExit [shape=diamond, label="Is Input 'Exit'?"];
+    CheckExists [shape=diamond, label="Product Exists?"];
+    AddToCart [label="Add Product to Cart"];
+    CalculateTotal [label="Calculate Total Cost"];
+    ShowReceipt [label="Display Receipt & Total"];
+    End [shape=oval, label="End"];
 
-    Start -> Auth;
-    Auth -> IsRegistered;
-    IsRegistered -> Menu [label="YES"];
-    IsRegistered -> Register [label="NO"];
-    Register -> Menu;
+    Start -> ShowProducts;
+    ShowProducts -> InputProduct;
+    InputProduct -> CheckExit;
     
-    Menu -> Schedule;
-    Schedule -> DocCheck;
-    DocCheck -> Book [label="YES"];
-    DocCheck -> NoDoc [label="NO"];
+    CheckExit -> CheckExists [label="No"];
+    CheckExit -> CalculateTotal [label="Yes"];
     
-    Book -> Menu;
-    NoDoc -> Menu;
+    CheckExists -> AddToCart [label="Yes"];
+    CheckExists -> ShowProducts [label="No (Invalid)"];
     
-    Menu -> Records;
-    Records -> Menu;
-    
-    Menu -> Exit;
+    AddToCart -> ShowProducts;
+    CalculateTotal -> ShowReceipt;
+    ShowReceipt -> End;
 }
